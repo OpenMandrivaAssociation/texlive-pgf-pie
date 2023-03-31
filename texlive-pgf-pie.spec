@@ -1,6 +1,6 @@
 Name:		texlive-pgf-pie
 Version:	63603
-Release:	1
+Release:	2
 Summary:	Draw pie charts, using PGF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pgf-pie
