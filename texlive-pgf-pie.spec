@@ -3,7 +3,7 @@ Version:	63603
 Release:	2
 Summary:	Draw pie charts, using PGF
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pgf-pie
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pgf-pie
 License:	gpl2 lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.doc.r%{version}.tar.xz
