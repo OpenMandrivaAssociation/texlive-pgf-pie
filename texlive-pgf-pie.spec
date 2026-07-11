@@ -1,36 +1,24 @@
-Name:		texlive-pgf-pie
-Version:	63603
-Release:	2
+%global tl_name pgf-pie
+%global tl_revision 63603
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.7
+Release:	%{tl_revision}.1
 Summary:	Draw pie charts, using PGF
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pgf-pie
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/pgf-pie
 License:	gpl2 lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pgf-pie.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(carlisle)
+Requires:	texlive(latex)
+Requires:	texlive(pgf)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides the means to draw pie (and variant)
-charts, using PGF/TikZ.
+The package provides the means to draw pie (and variant) charts, using
+PGF/TikZ.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/pgf-pie
-%doc %{_texmfdistdir}/doc/latex/pgf-pie
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
